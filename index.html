@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EJER_01</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="src/index.jsx"></script>
+
+  <!-- NOTA: el código react no lo he hecho en script de babel porque los datos están 
+             en un archivo externo y no se pueden importar. 
+             Todo el código que hay comentado aquí abajo es un ejemplo (para mí) de 
+             cómo se haría en un script inline si no tuvieramos el problema del import de data.js -->
+
+  <!-- Importar React, ReactDOM y babel, porque es script inline -->
+  <!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+
+  <!-- Importar styles y data, porque en scripts inline no se puede usar 'import' -->
+  <!-- <link rel="stylesheet" href="./index.css">
+  <script src="src/data.js"></script> -->
+
+  <!--Hacemos script babel inline en vez de en un archivo jsx separado -->
+  <!-- <script type="text/babel">
+    //generamos el componente de cada persona
+    const Person = (props) => {
+      return (
+          <article className="person">
+          <img src={props.image} alt=""/>
+          <div>
+            <h4>{props.name}</h4>
+            <p>{props.age} años</p>
+          </div>
+        </article>
+      )
+    }
+
+    //generamos el componente contenedor con todas las personas
+    const Everyone = () => {
+      const people = []
+      for (person of data) {
+          people.push(Person(person))
+      } 
+
+      return (
+          <main>
+              <section className="container">
+              <h3>Hoy hay {data.length} cumpleaños</h3>
+                  {people}
+              </section>
+          </main>
+      )
+    }
+
+    //renderizamos el componente 'main' en el DOM
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Everyone />);
+    //ReactDOM.render(<everyone/>,  document.querySelector('#root'))
+  </script> -->
+
+</body>
+
+</html>
